@@ -8,11 +8,11 @@ function App() {
       element:<Homepage/>
     },
     {
-      path:'signin',
+      path:'/signin',
       element:<SignInSignUp type="signin"/>
     },
     {
-      path:'register',
+      path:'/register',
       element:<SignInSignUp type="register"/>
     }
   ])
