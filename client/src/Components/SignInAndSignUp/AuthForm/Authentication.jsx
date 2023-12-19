@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import './authentication.css'
 import { useNavigate } from 'react-router-dom';
+import useJobContext from '../../../hooks/useJobContext';
 const Authentication = ({type}) => {
   const [isChecked,setIsChecked] = useState();
-  const [isLogin,setIsLogin] = useState();
+  const {isLogin,setIsLogin} = useJobContext();
   const Navigate = useNavigate();
   useEffect(()=>{
-    // eslint-disable-next-line
     type === 'register' ? setIsLogin(false):setIsLogin(true);
+    // eslint-disable-next-line
   },[type])
   const handleCheckboxChange =()=>{
     setIsChecked(!isChecked);

@@ -1,6 +1,7 @@
 import Homepage from "./Pages/Homepage";
 import {RouterProvider, createBrowserRouter} from 'react-router-dom';
 import SignInSignUp from "./Pages/SignInSignUp";
+import { Provider } from "./context/JobContext";
 function App() {
   const appRouter = createBrowserRouter([
     {
@@ -18,7 +19,9 @@ function App() {
   ])
   return (
     <div className="App">
+      <Provider>
       <RouterProvider router={appRouter}/>
+      </Provider>
     </div>
   );
 }

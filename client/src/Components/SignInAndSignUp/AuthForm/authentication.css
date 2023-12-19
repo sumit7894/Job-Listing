@@ -78,3 +78,12 @@ input[type="checkbox"]:checked
     font-size: 1.2rem;
     font-weight: 520;
 }
+.form__footer__link button
+{
+    border: none;
+    color: #000000;
+    text-decoration: underline;
+    font-size: 1.4rem;
+    background-color: white;
+    cursor: pointer;
+}
