@@ -4,29 +4,28 @@ import { useNavigate } from 'react-router-dom';
 import useJobContext from '../../../hooks/useJobContext';
 const Authentication = ({type}) => {
   const [isChecked,setIsChecked] = useState();
-  const {isLogin,setIsLogin} = useJobContext();
+  const [isLoginPage,setIsLoginPage] = useState();
+  const {setIsLoggedIn} = useJobContext();
   const Navigate = useNavigate();
   useEffect(()=>{
-    type === 'register' ? setIsLogin(false):setIsLogin(true);
+    type === 'register' ? setIsLoginPage(false):setIsLoginPage(true);
     // eslint-disable-next-line
   },[type])
   const handleCheckboxChange =()=>{
     setIsChecked(!isChecked);
   }
-  console.log("is this login",isLogin);
-  console.log("here is the type",type);
   return (
     <div className='auth__left'>
       <div className='form__container'>
         <label className='form__heading'>
-        {isLogin ? "Already have an account ?" : "Create an account"}
+        {isLoginPage ? "Already have an account ?" : "Create an account"}
         </label>
         <p className='form__subtitle'>Your personal job finder is here</p>
-        {!isLogin && <input type='text' placeholder='Name'/>}
+        {!isLoginPage && <input type='text' placeholder='Name'/>}
         <input type='Email' placeholder='Email'/>
-        {!isLogin && <input type='numeric' placeholder='Mobile'/>}
+        {!isLoginPage && <input type='numeric' placeholder='Mobile'/>}
         <input type='password' placeholder='Password'/>
-        {!isLogin && <div className='form__terms__condition'>
+        {!isLoginPage && <div className='form__terms__condition'>
         <input type='checkbox' checked={isChecked}
         onChange={handleCheckboxChange}
         />
@@ -35,12 +34,12 @@ const Authentication = ({type}) => {
         </span>
         </div>}
         <button className='form__submit__button'>
-        {isLogin ? "Sign in":"Create Account"}
+        {isLoginPage ? "Sign in":"Create Account"}
         </button>
         <p className='form__footer__link'>
-        {isLogin ? "Don't have an account ?":"Already have an account ?"}
-        <button onClick={()=>Navigate(isLogin ? "/register" : "/signin")}>
-        {isLogin ? "Sign Up":"Sign In"}
+        {isLoginPage ? "Don't have an account ?":"Already have an account ?"}
+        <button onClick={()=>Navigate(isLoginPage ? "/register" : "/signin")}>
+        {isLoginPage ? "Sign Up":"Sign In"}
         </button>
         </p>
       </div>

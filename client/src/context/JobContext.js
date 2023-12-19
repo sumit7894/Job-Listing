@@ -3,11 +3,11 @@
     const JobContext = createContext();
 
     const Provider = ({children})=>{
-        const [isLogin,setIsLogin] = useState();
+        const [isLoggedIn,setIsLoggedIn] = useState(true);
         const value = 
         {
-            isLogin,
-            setIsLogin
+            isLoggedIn,
+            setIsLoggedIn
         };
         return <JobContext.Provider value={value}>{children}</JobContext.Provider>
     }
