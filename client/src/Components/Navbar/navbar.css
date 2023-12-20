@@ -78,6 +78,10 @@
     gap: 1rem;
     margin-right: 8rem;
 }
+.nav__buttons
+{
+    margin-right: 8rem;
+}
 .navbar__right button
 {
     background: none;

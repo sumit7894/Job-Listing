@@ -3,7 +3,7 @@
     const JobContext = createContext();
 
     const Provider = ({children})=>{
-        const [isLoggedIn,setIsLoggedIn] = useState(true);
+        const [isLoggedIn,setIsLoggedIn] = useState();
         const value = 
         {
             isLoggedIn,

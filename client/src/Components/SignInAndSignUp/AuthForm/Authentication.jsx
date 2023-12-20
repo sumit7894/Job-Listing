@@ -33,7 +33,9 @@ const Authentication = ({type}) => {
         By creating an account, I agree to our terms of use and privacy policy
         </span>
         </div>}
-        <button className='form__submit__button'>
+        <button 
+        onClick={()=>{isLoginPage ? handleLogin: handleRegister}}
+        className='form__submit__button'>
         {isLoginPage ? "Sign in":"Create Account"}
         </button>
         <p className='form__footer__link'>
